@@ -467,3 +467,11 @@ ul{
   box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
   transform: translateY(0);
 }
+
+#cart{
+    background: none;
+    border: none;
+}
+#cart:focus{
+    outline: none;
+}
