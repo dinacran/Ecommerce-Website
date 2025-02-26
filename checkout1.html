@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="styles/checkout1.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div id="custom-alert-container" style="position: fixed; top: 10px; right: 10px; z-index: 1050;"></div>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="img/logo.png" style="height:60px;" alt="logo-image">
+                </div>
+                <nav>
+                    <ul id="menu-items">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index2.html">Kids</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="register.html">Account</a></li>
+                    </ul>
+                </nav>
+                <a href="cart.html" id="cart"><img src="img/cart.png" alt="cart" width="30px" height="30px"
+                    class="cart-img"></a>
+                <img src="img/menu.png" alt="menu" width="30px" height="30px" class="menu-icon" onclick="menutoggle()">
+            </div>
+
+        </div>
+    </div>
+    <div class="form-container">
+        <h2>Shipping Address</h2>
+        <div class="field-container">
+            <label for="address">Address</label>
+            <input id="address" type="text" required>
+        </div>
+        <div class="field-container">
+            <label for="city">City</label>
+            <input id="city" type="text" required>
+        </div>
+        <div class="field-container">
+            <label for="state">State</label>
+            <input id="state" type="text" required>
+        </div>
+        <div class="field-container">
+            <label for="zip">Zip</label>
+            <input id="zip" type="text" required>
+        </div>
+        <div class="radio-container">
+            <label for="cashOnDelivery">Cash on Delivery</label>
+            <input type="radio" id="cashOnDelivery" name="cashOnDelivery" disabled checked>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="placeOrder()">Place Order</button>
+    </div>
+    <script src="script/checkout1.js"></script>
+
+</body>
+</html>
+
+

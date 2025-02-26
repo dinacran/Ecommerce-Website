@@ -475,3 +475,12 @@ ul{
 #cart:focus{
     outline: none;
 }
+
+#item-title{
+    color:#888888;
+}
+
+#item-price{
+    font-style: italic;
+    color: #888888;
+}
