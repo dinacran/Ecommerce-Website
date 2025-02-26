@@ -1,525 +1,651 @@
 <!DOCTYPE html>
 <html lang="du">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- ----------main style------------ -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="styles/style.css">
-        <!-- ------------Google Fonts-------------- -->
-        <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;500;600;700&display=swap"
-            rel="stylesheet">
-        <!-- --------------Icon pack font-awesome----------- -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <!-- --------------------Google Maps Api---------------- -->
-        <script defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl7F3URup7S4Of3R3cJQLk535vNnUQRzg&callback=initMap">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl7F3URup7S4Of3R3cJQLk535vNnUQRzg&callback=initMap">
         </script>
-        <title>ElectroHub | World's Best Market</title>
-    </head>
+    <title>ElectroHub | World's Best Market</title>
+</head>
 
-    <body>
-        <div class="header">
-            <div class="container">
-                <div class="navbar">
-                    <div class="logo">
-                        <img src="img/logo.png" style="height:60px;" alt="logo-image">
-                    </div>
-                    <nav>
-                        <ul id="menu-items">
-                            <li><a href="">Home</a></li>
-                            <li><a href="index2.html">Kids</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li><a href="register.html">Account</a></li>
-                        </ul>
-                    </nav>
-                    <button id="cart"><img src="img/cart.png" alt="cart" width="30px" height="30px" class="cart-img"></button>
-                    <img src="img/menu.png" alt="menu" width="30px" height="30px" class="menu-icon" onclick="menutoggle()">
-                </div>
-                <div class="row">
-                    <div class="col-md-6 ">
-                        <h1 class="text-white">Great deals happening <br> Right Now!</h1>
-                        <p>Enjoy a safe, convenient shopping experience</p>
-                        <p>Shop stress-free from home. We’re ready to help, online or by phone.</p>
-                        <a href="" class="btn btn-main">Explore Now &#8594;</a>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="img/laptop-banner.png" alt="banner-image" class="center">
-                    </div>
+<body>
+    <div id="custom-alert-container" style="position: fixed; top: 10px; right: 10px; z-index: 1050;"></div>
 
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="img/logo.png" style="height:60px;" alt="logo-image">
                 </div>
+                <nav>
+                    <ul id="menu-items">
+                        <li><a href="">Home</a></li>
+                        <li><a href="index2.html">Kids</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="register.html">Account</a></li>
+                    </ul>
+                </nav>
+                <a href="cart.html" id="cart"><img src="img/cart.png" alt="cart" width="30px" height="30px"
+                        class="cart-img"></a>
+                <img src="img/menu.png" alt="menu" width="30px" height="30px" class="menu-icon" onclick="menutoggle()">
             </div>
-        </div>
-        <!-- featured products -->
-        <div class="small-container mt-5">
-            <h2 class="title">Featured Products</h2>
-            <div class="row horizontal-scroll-wrapper squares">
-                <div class="col-4 box-container" desc="This tablet pc is powered by a strong processor and has a high resolution display. It is perfect for watching movies, browsing the internet, and playing games.">
-                    <div class="image-overlay"></div>
-                    <img src="img/power-tab.jpeg" alt="tablet pc">
-                    <h5 class="product_name">Tablet Pc</h5>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">Tablet Pc</h3>
-                        <h4 class="content-price">Rs1000.99</h4>
-                        <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    </div>
-                    <p class="price_name" >Rs1000.99</p>
-                    <!-- <div class="btn btn-secondary" title="Preview Item"><i class="fa fa-cart-plus" aria-hidden="true"></i>
-                    </div> -->
-                </div>
-                <div class="col-4 box-container" desc="This console is perfect for gaming and entertainment. It has a high-resolution display, powerful processor, and a wide variety of games to choose from.">
-                    <div class="image-overlay"></div>
-                    <img src="img/ps4-gaming.jpg" alt="Gaming console">
-                    <h5 class="product_name">X-box Console</h5>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">X-box Console</h3>
-                        <h4 class="content-price">Rs2000</h4>
-                        <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    </div>
-                    <p class="price_name" >Rs2000</p>
-                </div>
-                <div class="col-4 box-container" desc="This phone is powered by a strong processor and has a high resolution display. It is perfect for watching movies, browsing the internet, and playing games.">
-                    <img src="img/iphonex-phone.jpg" alt="Iphone X">
-                    <h5 class="product_name">IPhone X</h5>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <div class="image-overlay"></div>
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">IPhone X</h3>
-                        <h4 class="content-price">Rs4999.99</h4>
-                        <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    </div>
-                    <p class="price_name" >Rs4999.99</p>
-                </div>
-                <div class="col-4 box-container" desc="This keyboard is perfect for gaming and entertainment. It has a high-resolution display, powerful processor, and a wide variety of games to choose from.">
-                    <img src="img/keyboard.jpg" alt="keyboard">
-                    <h5 class="product_name">Logitech Super Slim</h5>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <div class="image-overlay"></div>
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">Logitech Super Slim</h3>
-                        <h4 class="content-price">Rs199.99</h4>
-                        <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    </div>
-                    <p class="price_name" >Rs199.99</p>
-                </div>
-            </div>
-            <!-- Latest products -->
-            <h2 class="title">Latest Products</h2>
             <div class="row">
-                <div class="col-4 box-container" desc = "This laptop is perfect for gaming and entertainment. It has a high-resolution display, powerful processor, and a wide variety of games to choose from.">
-                    <img src="img/Alienware-laptop.png" alt="Gaming Laptop" >
-                    <h5 class="product_name">Gaming Laptop</h5>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <div class="image-overlay"></div>
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">Gaming Laptop</h3>
-                        <h4 class="content-price">Rs2000</h4>
-                        <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    </div>
-                    <p class="price_name" >Rs2000</p>
+                <div class="col-md-6 ">
+                    <h1 class="text-white">Great deals happening <br> Right Now!</h1>
+                    <p>Enjoy a safe, convenient shopping experience</p>
+                    <p>Shop stress-free from home. We’re ready to help, online or by phone.</p>
+                    <a href="" class="btn btn-main">Explore Now &#8594;</a>
                 </div>
-                <div class="col-4 box-container" desc="This camera is perfect for photography and videography. It has a high-resolution display, powerful processor, and a wide variety of games to choose from.">
-                    <img src="img/canon-cam.jpg" alt="Camera">
-                    <h5 class="product_name">Canon 12X Pro Shoot</h5>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <div class="image-overlay"></div>
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">Canon 12X Pro Shoot</h3>
-                        <h4 class="content-price">Rs990</h4>
-                        <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    </div>
-                    <p class="price_name" >Rs990</p>
+                <div class="col-md-6">
+                    <img src="img/laptop-banner.png" alt="banner-image" class="center">
                 </div>
-                <div class="col-4 box-container" desc="This phone is perfect for photography and videography. It has a high-resolution display, powerful processor, and a wide variety of games to choose from.">
-                    <img src="img/iphone9-phone.jpg" alt="Iphone SE">
-                    <h5 class="product_name">IPhone SE</h5>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <div class="image-overlay"></div>
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">IPhone SE</h3>
-                        <h4 class="content-price">Rs4999.99</h4>
-                        <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    </div>
-                    <p class="price_name" >Rs4999.99</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="small-container mt-5">
+        <h2 class="title">Featured Products</h2>
+        <div class="row horizontal-scroll-wrapper squares">
+            <div class="col-4 box-container"
+                desc="This tablet pc is powered by a strong processor and has a high resolution display. It is perfect for watching movies, browsing the internet, and playing games.">
+                <div class="image-overlay"></div>
+                <img src="img/power-tab.jpeg" alt="tablet pc">
+                <h5 class="product_name">Tablet Pc</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
                 </div>
-                <div class="col-4 box-container" desc="This tablet is perfect for photography and videography. It has a high-resolution display, powerful processor, and a wide variety of games to choose from.">
-                    <img src="img/logitech-tab.png" alt="Tablet Pc">
-                    <h5 class="product_name">Samsung Tablet PC</h5>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                    </div>
-                    <div class="image-overlay"></div>
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">Samsung Tablet PC</h3>
-                        <h4 class="content-price">Rs3999.99</h4>
-                        <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    </div>
-                    <p class="price_name" >Rs3999.99</p>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">Tablet Pc</h3>
+                    <h4 class="content-price">Rs. 1000.99</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
                 </div>
-                <div class="col-4 box-container" desc="This laptop is perfect for photography and videography. It has a high-resolution display, powerful processor, and a wide variety of games to choose from.">
-                    <img src="img/imac.jpg" alt="Imac">
-                    <h5 class="product_name">Apple Imac</h5>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <div class="image-overlay"></div>
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">Apple Imac</h3>
-                        <h4 class="content-price">Rs7999.99</h4>
-                        <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    </div>
-                    <p class="price_name" >Rs7999.99</p>
+                <p class="price_name">Rs. 1000.99</p>
+            </div>
+            <div class="col-4 box-container"
+                desc="This console is perfect for gaming and entertainment. It has a high-resolution display, powerful processor, and a wide variety of games to choose from.">
+                <div class="image-overlay"></div>
+                <img src="img/ps4-gaming.jpg" alt="Gaming console">
+                <h5 class="product_name">X-box Console</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>
                 </div>
-                <div class="col-4 box-container" desc="This product is perfect for everyday use. It has a high-quality build and is very durable.">
-                    <img src="img/thunderbolt.jpeg" alt="Gaming Laptop">
-                    <h5 class="product_name">USB Type-C Thunderbolt</h5>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <div class="image-overlay"></div>
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">USB Type-C Thunderbolt</h3>
-                        <h4 class="content-price">Rs200</h4>
-                        <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    </div>
-                    <p class="price_name" >Rs200</p>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">X-box Console</h3>
+                    <h4 class="content-price">Rs. 2000</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
                 </div>
-                <div class="col-4 box-container" desc="This laptop is perfect for gaming and entertainment. It has a high-resolution display, powerful processor, and a wide variety of games to choose from.">
-                    <img src="img/laptop-gaming.jpg" alt="Gaming Laptop">
-                    <h5 class="product_name">Alienware Laptop</h5>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <div class="image-overlay"></div>
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">Alienware Laptop</h3>
-                        <h4 class="content-price">Rs7000.99</h4>
-                        <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    </div>
-                    <p class="price_name" >Rs7000.99</p>
+                <p class="price_name">Rs. 2000</p>
+            </div>
+            <div class="col-4 box-container"
+                desc="This phone is powered by a strong processor and has a high resolution display. It is perfect for watching movies, browsing the internet, and playing games.">
+                <img src="img/iphonex-phone.jpg" alt="Iphone X">
+                <h5 class="product_name">IPhone X</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
                 </div>
-                <div class="col-4 box-container" desc="This game is perfect for first person shooter game lovers. It has a wide variety of guns and a multiplayer mode.">
-                    <img src="img/cod-ps4.jpg" alt="Playstation 4">
-                    <h5 class="product_name">Call of Duty MW</h5>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <div class="image-overlay"></div>
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">Call of Duty MW</h3>
-                        <h4 class="content-price">Rs1000.99</h4>
-                        <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    </div>
-                    <p class="price_name" >Rs1000.99</p>
+                <div class="image-overlay"></div>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">IPhone X</h3>
+                    <h4 class="content-price">Rs. 4999.99</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
                 </div>
-                <div class="col-4 box-container" desc="This drone is perfect for taking pictures and videos from the sky. It has a high-resolution camera and a powerful processor.">
-                    <img src="img/phantom-drone.png" alt="Phantom Drone">
-                    <h5 class="product_name">Phantom Drone</h5>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                    </div>
-                    <div class="image-overlay"></div>
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">Phantom Drone</h3>
-                        <h4 class="content-price">Rs2500.00</h4>
-                        <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    </div>
-                    <p class="price_name" >Rs2500.00</p>
+                <p class="price_name">Rs. 4999.99</p>
+            </div>
+            <div class="col-4 box-container"
+                desc="This keyboard is perfect for gaming and entertainment. It has a high-resolution display, powerful processor, and a wide variety of games to choose from.">
+                <img src="img/keyboard.jpg" alt="keyboard">
+                <h5 class="product_name">Logitech Super Slim</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
                 </div>
-                <div class="col-4 box-container" desc="This product is perfect for everyday use. It has a high-quality build and is very durable.">
-                    <img src="img/epson-projector.png" alt="Epson Projector">
-                    <h5 class="product_name">Epson Projector</h5>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <div class="image-overlay"></div>
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">Epson Projector</h3>
-                        <h4 class="content-price">Rs1000.99</h4>
-                        <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    </div>
-                    <p class="price_name" >Rs1000.99</p>
+                <div class="image-overlay"></div>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">Logitech Super Slim</h3>
+                    <h4 class="content-price">Rs. 199.99</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
                 </div>
-                <div class="col-4 box-container" desc="This headset is perfect for gaming. It provides excellent sound quality and comfort for extended gaming sessions.">
-                    <img src="img/ps4-headset.jpg" alt="Gaming Headset">
-                    <h5 class="product_name">Ps4 Gaming Headset</h5>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <div class="image-overlay"></div>
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">Ps4 Gaming Headset</h3>
-                        <h4 class="content-price">Rs800</h4>
-                        <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    </div>
-                    <p class="price_name" >Rs800</p>
+                <p class="price_name">Rs. 199.99</p>
+            </div>
+        </div>
+        <!-- Latest products -->
+        <h2 class="title">Latest Products</h2>
+        <div class="row">
+            <div class="col-4 box-container"
+                desc="This laptop is perfect for gaming and entertainment. It has a high-resolution display, powerful processor, and a wide variety of games to choose from.">
+                <img src="img/Alienware-laptop.png" alt="Gaming Laptop">
+                <h5 class="product_name">Gaming Laptop</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
                 </div>
-                <div class="col-4 box-container" desc="These speakers offer high-quality sound and are perfect for both music and movies.">
-                    <img src="img/superbass-speakers.jpg" alt="Super Bass Laptop Speakers">
-                    <h5 class="product_name">Super Bass USB Speakers</h5>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <div class="image-overlay"></div>
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">Super Bass USB Speakers</h3>
-                        <h4 class="content-price">Rs1500</h4>
-                        <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    </div>
-                    <p class="price_name" >Rs1500</p>
+                <div class="image-overlay"></div>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">Gaming Laptop</h3>
+                    <h4 class="content-price">Rs. 2000</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
                 </div>
-                <div class="col-4 box-container" desc="This game is perfect for racing game lovers. It has a wide variety of cars and tracks to choose from.">
-                    <img src="img/xbox-game.jpg" alt="Fifa 20 Xbox">
-                    <h5 class="product_name">Fifa 20 Xbox</h5>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <div class="image-overlay"></div>
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">Fifa 20 Xbox</h3>
-                        <h4 class="content-price">Rs300.99</h4>
-                        <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    </div>
-                    <p class="price_name" >Rs300</p>
+                <p class="price_name">Rs. 2000</p>
+            </div>
+            <div class="col-4 box-container"
+                desc="This camera is perfect for photography and videography. It has a high-resolution display, powerful processor, and a wide variety of games to choose from.">
+                <img src="img/canon-cam.jpg" alt="Camera">
+                <h5 class="product_name">Canon 12X Pro Shoot</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
                 </div>
-                <div class="col-4 box-container" desc="This headset is perfect for gaming. It provides excellent sound quality and comfort for extended gaming sessions.">
-                    <img src="img/xbox-headset.jpg" alt="Xbox Headset">
-                    <h5 class="product_name">X-box Headset</h5>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <div class="image-overlay"></div>
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">X-box Headset</h3>
-                        <h4 class="content-price">Rs1000.99</h4>
-                        <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    </div>
-                    <p class="price_name" >Rs1000.99</p>
+                <div class="image-overlay"></div>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">Canon 12X Pro Shoot</h3>
+                    <h4 class="content-price">Rs. 990</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
                 </div>
-                <div class="col-4 box-container" desc="This drone is perfect for taking pictures and videos from the sky. It has a high-resolution camera and a powerful processor.">
-                    <img src="img/falcon-drone.jpg" alt="falcon-drone">
-                    <h5 class="product_name">Falcon Drone</h5>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <div class="image-overlay"></div>
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">Falcon Drone</h3>
-                        <h4 class="content-price">Rs3000.99</h4>
-                        <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    </div>
-                    <p class="price_name" >Rs3000</p>
+                <p class="price_name">Rs. 990</p>
+            </div>
+            <div class="col-4 box-container"
+                desc="This phone is perfect for photography and videography. It has a high-resolution display, powerful processor, and a wide variety of games to choose from.">
+                <img src="img/iphone9-phone.jpg" alt="Iphone SE">
+                <h5 class="product_name">IPhone SE</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>
                 </div>
-                <div class="col-4 box-container" desc="This game is perfect for first person shooter game lovers. It has a wide variety of guns and a multiplayer mode.">
-                    <img src="img/ps4-fortnite.jpg" alt="Fortnite">
-                    <h5 class="product_name">Ps4 Fornite</h5>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                    </div>
-                    <div class="image-overlay"></div>   
-                    <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">Ps4 Fornite</h3>
-                        <h4 class="content-price">Rs300.99</h4>
-                        <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    </div>
-                    <p class="price_name" >Rs300</p>
+                <div class="image-overlay"></div>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">IPhone SE</h3>
+                    <h4 class="content-price">Rs. 4999.99</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
+                </div>
+                <p class="price_name">Rs. 4999.99</p>
+            </div>
+            <div class="col-4 box-container"
+                desc="This tablet is perfect for photography and videography. It has a high-resolution display, powerful processor, and a wide variety of games to choose from.">
+                <img src="img/logitech-tab.png" alt="Tablet Pc">
+                <h5 class="product_name">Samsung Tablet PC</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <div class="image-overlay"></div>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">Samsung Tablet PC</h3>
+                    <h4 class="content-price">Rs. 3999.99</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
+                </div>
+                <p class="price_name">Rs. 3999.99</p>
+            </div>
+            <div class="col-4 box-container"
+                desc="This laptop is perfect for photography and videography. It has a high-resolution display, powerful processor, and a wide variety of games to choose from.">
+                <img src="img/imac.jpg" alt="Imac">
+                <h5 class="product_name">Apple Imac</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <div class="image-overlay"></div>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">Apple Imac</h3>
+                    <h4 class="content-price">Rs. 7999.99</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
+                </div>
+                <p class="price_name">Rs. 7999.99</p>
+            </div>
+            <div class="col-4 box-container"
+                desc="This product is perfect for everyday use. It has a high-quality build and is very durable.">
+                <img src="img/thunderbolt.jpeg" alt="Gaming Laptop">
+                <h5 class="product_name">USB Type-C Thunderbolt</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <div class="image-overlay"></div>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">USB Type-C Thunderbolt</h3>
+                    <h4 class="content-price">Rs. 200</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
+                </div>
+                <p class="price_name">Rs. 200</p>
+            </div>
+            <div class="col-4 box-container"
+                desc="This laptop is perfect for gaming and entertainment. It has a high-resolution display, powerful processor, and a wide variety of games to choose from.">
+                <img src="img/laptop-gaming.jpg" alt="Gaming Laptop">
+                <h5 class="product_name">Alienware Laptop</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <div class="image-overlay"></div>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">Alienware Laptop</h3>
+                    <h4 class="content-price">Rs. 7000.99</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
+                </div>
+                <p class="price_name">Rs. 7000.99</p>
+            </div>
+            <div class="col-4 box-container"
+                desc="This game is perfect for first person shooter game lovers. It has a wide variety of guns and a multiplayer mode.">
+                <img src="img/cod-ps4.jpg" alt="Playstation 4">
+                <h5 class="product_name">Call of Duty MW</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <div class="image-overlay"></div>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">Call of Duty MW</h3>
+                    <h4 class="content-price">Rs. 1000.99</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
+                </div>
+                <p class="price_name">Rs. 1000.99</p>
+            </div>
+            <div class="col-4 box-container"
+                desc="This drone is perfect for taking pictures and videos from the sky. It has a high-resolution camera and a powerful processor.">
+                <img src="img/phantom-drone.png" alt="Phantom Drone">
+                <h5 class="product_name">Phantom Drone</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <div class="image-overlay"></div>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">Phantom Drone</h3>
+                    <h4 class="content-price">Rs. 2500.00</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
+                </div>
+                <p class="price_name">Rs. 2500.00</p>
+            </div>
+            <div class="col-4 box-container"
+                desc="This product is perfect for everyday use. It has a high-quality build and is very durable.">
+                <img src="img/epson-projector.png" alt="Epson Projector">
+                <h5 class="product_name">Epson Projector</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <div class="image-overlay"></div>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">Epson Projector</h3>
+                    <h4 class="content-price">Rs. 1000.99</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
+                </div>
+                <p class="price_name">Rs. 1000.99</p>
+            </div>
+            <div class="col-4 box-container"
+                desc="This headset is perfect for gaming. It provides excellent sound quality and comfort for extended gaming sessions.">
+                <img src="img/ps4-headset.jpg" alt="Gaming Headset">
+                <h5 class="product_name">Ps4 Gaming Headset</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <div class="image-overlay"></div>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">Ps4 Gaming Headset</h3>
+                    <h4 class="content-price">Rs. 800</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
+                </div>
+                <p class="price_name">Rs. 800</p>
+            </div>
+            <div class="col-4 box-container"
+                desc="These speakers offer high-quality sound and are perfect for both music and movies.">
+                <img src="img/superbass-speakers.jpg" alt="Super Bass Laptop Speakers">
+                <h5 class="product_name">Super Bass USB Speakers</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <div class="image-overlay"></div>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">Super Bass USB Speakers</h3>
+                    <h4 class="content-price">Rs. 1500</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
+                </div>
+                <p class="price_name">Rs. 1500</p>
+            </div>
+            <div class="col-4 box-container"
+                desc="This game is perfect for racing game lovers. It has a wide variety of cars and tracks to choose from.">
+                <img src="img/xbox-game.jpg" alt="Fifa 20 Xbox">
+                <h5 class="product_name">Fifa 20 Xbox</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <div class="image-overlay"></div>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">Fifa 20 Xbox</h3>
+                    <h4 class="content-price">Rs. 300.99</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
+                </div>
+                <p class="price_name">Rs. 300</p>
+            </div>
+            <div class="col-4 box-container"
+                desc="This headset is perfect for gaming. It provides excellent sound quality and comfort for extended gaming sessions.">
+                <img src="img/xbox-headset.jpg" alt="Xbox Headset">
+                <h5 class="product_name">X-box Headset</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <div class="image-overlay"></div>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">X-box Headset</h3>
+                    <h4 class="content-price">Rs. 1000.99</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
+                </div>
+                <p class="price_name">Rs. 1000.99</p>
+            </div>
+            <div class="col-4 box-container"
+                desc="This drone is perfect for taking pictures and videos from the sky. It has a high-resolution camera and a powerful processor.">
+                <img src="img/falcon-drone.jpg" alt="falcon-drone">
+                <h5 class="product_name">Falcon Drone</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <div class="image-overlay"></div>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">Falcon Drone</h3>
+                    <h4 class="content-price">Rs. 3000.99</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
+                </div>
+                <p class="price_name">Rs. 3000</p>
+            </div>
+            <div class="col-4 box-container"
+                desc="This game is perfect for first person shooter game lovers. It has a wide variety of guns and a multiplayer mode.">
+                <img src="img/ps4-fortnite.jpg" alt="Fortnite">
+                <h5 class="product_name">Ps4 Fornite</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <div class="image-overlay"></div>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">Ps4 Fornite</h3>
+                    <h4 class="content-price">Rs. 300.99</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
+                </div>
+                <p class="price_name">Rs. 300</p>
+            </div>
+            <div class="col-4 box-container"
+                desc="This tricycle is perfect for kids. It is very durable and has a strong frame. It also has a basket for carrying toys and other items.">
+                <img src="img/tricycle1.jpg" alt="Kids Tricycle">
+                <h5 class="product_name">Kids Tricycle</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <div class="image-overlay"></div>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">Kids Tricycle</h3>
+                    <h4 class="content-price">Rs. 1000.99</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
+                </div>
+                <p class="price_name">Rs. 1000.99</p>
+            </div>
+            <div class="col-4 box-container"
+                desc="This tricycle is perfect for kids. It is very colorful kids love to play with this tricycle. It also has a basket for carrying toys and other items.">
+                <img src="img/tricycle2.jpg" alt="Kids Tricycle">
+                <h5 class="product_name">Kids Tricycle</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <div class="image-overlay"></div>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">Ps4 Fornite</h3>
+                    <h4 class="content-price">Rs. 1300.99</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
+                </div>
+                <p class="price_name">Rs. 1300</p>
+            </div>
+            <div class="col-4 box-container"
+                desc="This t-shirt is perfect for casual wear. It is made of high-quality material and is very comfortable.">
+                <img src="img/t-shirt1.jpg" alt="Casual T-shirt">
+                <h5 class="product_name">Casual T-shirt</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <div class="image-overlay"></div>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">Casual T-shirt</h3>
+                    <h4 class="content-price">Rs. 500.00</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
+                </div>
+                <p class="price_name">Rs. 500.00</p>
+            </div>
+            <div class="col-4 box-container"
+                desc="This t-shirt is perfect for casual wear. It is made of high-quality material and is very comfortable.">
+                <img src="img/t-shirt2.jpg" alt="Casual T-shirt">
+                <h5 class="product_name">Casual T-shirt</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <div class="image-overlay"></div>
+                <div class="content-details fadeIn-bottom">
+                    <h3 class="content-title">Casual T-shirt</h3>
+                    <h4 class="content-price">Rs. 400.00</h4>
+                    <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                            aria-hidden="true"></i></div>
+                </div>
+                <p class="price_name">Rs. 400.00</p>
+            </div>
+            <div class="col-4 box-container"
+            desc="This t-shirt is perfect for casual wear. It is made of high-quality material and is very comfortable.">
+            <img src="img/t-shirt3.jpg" alt="Casual T-shirt">
+            <h5 class="product_name">Casual T-shirt</h5>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i> 
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <div class="image-overlay"></div>
+            <div class="content-details fadeIn-bottom">
+                <h3 class="content-title">Casual T-shirt</h3>
+                <h4 class="content-price">Rs. 600.00</h4>
+                <div class="content-btn btn btn-secondary" title="Add to Cart"><i class="fa fa-cart-plus"
+                        aria-hidden="true"></i></div>
+            </div>
+            <p class="price_name">Rs. 600.00</p>
+        </div>
+
+
+        </div>
+    </div>
+
+    <!-- offer -->
+    <div class="offer">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-6">
+                    <img src="img/asus-banner.png" class="offer-img">
+                </div>
+                <div class="col-6 text-data text-white">
+                    <p>Top Prodcuts you should take it</p>
+                    <h1>Best Product limited offer!</h1>
+
+                    <a href="" class="btn">Buy Now &#8594</a>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- offer -->
-        <div class="offer">
-            <div class="small-container">
-                <div class="row">
-                    <div class="col-6">
-                        <img src="img/asus-banner.png" class="offer-img">
-                    </div>
-                    <div class="col-6 text-data text-white">
-                        <p>Top Prodcuts you should take it</p>
-                        <h1>Best Product limitd offer!</h1>
-                        
-                        <a href="" class="btn">Buy Now &#8594</a>
-                    </div>
+
+
+    <!-- brands -->
+    <div class="brands">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-3">
+                    <img src="img/amazon_PNG24.png" alt="amazon logo">
+                </div>
+                <div class="col-3">
+                    <img src="img/apple_logo_PNG19675.png" alt="apple logo">
+                </div>
+                <div class="col-3">
+                    <img src="img/samsung_logo_PNG2.png" alt="samsung logo">
+                </div>
+                <div class="col-3">
+                    <img src="img/mastercard_PNG7.png" alt="mastercard logo">
+                </div>
+                <div class="col-3">
+                    <img src="img/paypal_PNG19.png" alt="mastercard logo">
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="locate">
-            <div class="small-container">
-                <div class="row">
-                    <div class="col-2">
-                        <h3>My Google Maps Demo</h3>
-                        <div id="map"></div>
-                    </div>
-                    <div class="col-2">
-
+    <!-- -------footer------ -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download our app</h3>
+                    <p>Top G5 Enabled Prodcuts with good support</p>
+                    <div class="app-logo">
+                        <img src="img/playstore.png" alt="">
+                        <img src="img/appstore.png" alt="">
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- brands -->
-        <div class="brands">
-            <div class="small-container">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="img/amazon_PNG24.png" alt="amazon logo">
-                    </div>
-                    <div class="col-3">
-                        <img src="img/apple_logo_PNG19675.png" alt="apple logo">
-                    </div>
-                    <div class="col-3">
-                        <img src="img/samsung_logo_PNG2.png" alt="samsung logo">
-                    </div>
-                    <div class="col-3">
-                        <img src="img/mastercard_PNG7.png" alt="mastercard logo">
-                    </div>
-                    <div class="col-3">
-                        <img src="img/paypal_PNG19.png" alt="mastercard logo">
-                    </div>
+                <div class="footer-col-2">
+                    <img src="images" alt="">
+                    <p>Best technology enabled product?</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>YouTube</li>
+                    </ul>
                 </div>
             </div>
+            <hr>
+            <p class="copyright">Copyright 2021 Sangeetha</p>
         </div>
+    </div>
+    <script src="script/main.js"></script>
 
-        <!-- -------footer------ -->
-        <div class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col-1">
-                        <h3>Download our app</h3>
-                        <p>Top G5  Enabled Prodcuts with good support</p>
-                        <div class="app-logo">
-                            <img src="img/playstore.png" alt="">
-                            <img src="img/appstore.png" alt="">
-                        </div>
-                    </div>
-                    <div class="footer-col-2">
-                        <img src="images" alt="">
-                        <p>Best technology enabled product?</p>
-                    </div>
-                    <div class="footer-col-3">
-                        <h3>Useful Links</h3>
-                        <ul>
-                            <li>Coupons</li>
-                            <li>Blog Post</li>
-                            <li>Return Policy</li>
-                            <li>Join Affiliate</li>
-                        </ul>
-                    </div>
-                    <div class="footer-col-4">
-                        <h3>Follow Us</h3> 
-                        <ul>
-                            <li>Facebook</li>
-                            <li>Twitter</li>
-                            <li>Instagram</li>
-                            <li>YouTube</li>
-                        </ul>
-                    </div>
-                </div>
-                <hr>
-                <p class="copyright">Copyright 2021 Sangeetha</p>
-            </div>
-        </div>
-        <script src="script/main.js"></script>
-
-    </body>
+</body>
 
 </html>
